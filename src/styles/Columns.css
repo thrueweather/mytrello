@@ -1,0 +1,260 @@
+::-webkit-scrollbar-button {
+    background-image:url('');
+    background-repeat:no-repeat;
+    width: 0px;height:0px;
+}
+::-webkit-scrollbar-track {
+    background-color: #eeeeee86;
+    border-radius: 20px;
+}
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 0px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.50);
+}
+::-webkit-scrollbar-thumb:hover{
+    background-color:#00000020;
+}
+::-webkit-resizer{
+    background-image:url('');
+    background-repeat: no-repeat;
+    width:4px; height:0px;
+}
+::-webkit-scrollbar{width: 4px;}
+.columns {padding: 60px 0;}
+.columns ul {
+    display: flex;
+    align-items: flex-start;
+    padding: 0; 
+    margin: 0 0 20px 0;
+    overflow: auto;
+}
+.columns ul li{
+    min-width: 24.5%;
+    margin: 0px 8px 8px 0px;
+    padding: 0 0 10px 0;
+    overflow: hidden;
+    background-color: #eeeeeec5;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    list-style: none;
+}
+.columns ul li a {
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 0 0 8px 0;
+    color: black;
+    text-decoration: none;
+    margin: auto;
+}
+.title-card {
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+}
+.title-card h2 {
+    font-size: 20px;
+    margin: 0;
+}
+.sc-bdVaJa {cursor: pointer;}
+.columns ul li h3 {
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 18px;
+    transition: .2s;
+    cursor: pointer;
+    margin: 20px 10px 0 10px;
+}
+.columns ul li h3:hover {background-color: rgba(216, 214, 214, 0.611);}
+.list {margin: 0 10px;}
+.list p {
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: 400;
+    cursor: pointer;
+    transition: .2s;
+}
+.list p:hover {background-color: #eee;}
+.list p span {
+    color: #eee;
+    font-weight: 100;
+    text-align: right;
+}
+.columns ul li form {
+    padding: 8px 0 8px 0;
+    margin: 0 10px;
+}
+.columns ul li form input {
+    background-color: white;
+    word-wrap: break-word;
+    border: none;
+    border-radius: 5px;
+    height: 25px; width: 80%;
+    padding: 8px 4px;
+}
+.columns ul li form button {
+    background-color: rgba(238, 238, 238, 0.774);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    border: none;
+    margin: 10px 10px 0 0;
+    padding: 8px;
+}
+.columns ul li form button:active {
+    background-color: rgb(255, 251, 251);
+}
+.add-board {
+    background-color: rgba(0, 0, 0, 0.438);
+    position: fixed;
+    top: 0;left: 0;
+    height: 100%; width: 100%;
+}
+.add-board-wrapp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+    height: 100%;
+}
+.add-board-wrapp form {
+    background-color: #ffffffb8;
+    padding: 50px 50px;
+    position: relative;
+    text-align: center;
+}
+.add-board-wrapp form h3 {
+    position: absolute;
+    top: 0; right: 0;
+    margin: 0;
+    font-size: 30px;
+    font-weight: 100;
+    transition: .2s;
+    cursor: pointer;
+}
+.add-board-wrapp form input {
+    background-color: rgba(238, 238, 238, 0.774);
+    border: 1px solid #00000026;
+    border-radius: 5px;
+    outline: none;
+    padding: 10px;
+    color: black;
+}
+.add-board-wrapp form button {
+    background-color: rgba(238, 238, 238, 0.774);
+    border: 1px solid #00000026;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 10px 0 0 0;
+    padding: 10px 40px;
+}
+.modal-form {
+    background-color: rgba(238, 238, 238, 0.774);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24.6%;
+    font-size: 50px;
+    font-weight: 100;
+    color: white;
+    cursor: pointer;
+    transition: .2s;
+}
+.modal-form:hover {background-color: rgba(238, 238, 238, 0.87);}
+.modal-card {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    width: 50%; height: auto;
+    margin: auto;
+    z-index: 1;
+    overflow: auto;
+    background-color: white;
+    box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+.modal-card-wrapp {
+    position: relative;
+    padding: 20px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.modal-card-wrapp-title, .close {
+    position: absolute;
+    top: 0; right: 0;
+    margin: 0;
+}
+.completed {text-decoration: line-through; opacity: 0.50;}
+@media only screen and (max-width : 1226px) {
+    
+}
+@media only screen and (max-width : 1200px) {
+    
+}
+@media only screen and (max-width : 991px) {
+    .columns ul li { min-width: 49.5% }
+    .add-board { background: none; }
+    .add-board-wrapp form {background-color: white;}
+    .add-board-wrapp form input  {
+        background-color: #fcfdff;
+        border: 1px solid #989494;
+        color: black;
+    }
+    .add-board-wrapp form button  {
+        background-color: #fcfdff;
+        border: 1px solid #989494;
+    }
+}
+@media only screen and (max-width : 860px) {
+    .title-card h2 { font-size: 16px; }
+    .columns ul li h3 {font-size: 16px;}
+    .list p { font-size: 14px; }
+    .modal-form {
+        padding: 10px 0;
+        float: none;
+        width: 15%;
+        margin: 10px auto 0 auto;
+    }
+}
+@media only screen and (max-width : 767px) {
+    .columns {padding: 40px 0;}
+    .columns ul li {
+        box-shadow: 0 0;
+        min-width: 100%;
+        margin: 1% 0;
+        overflow: hidden;
+    }
+    .modal-card {width: 60%;font-size: 14px;}
+    .modal-form {width: 50%;}
+    .add-board {
+        position: relative;
+        margin-top: 10px;
+    }
+    .top-nav-wrapp_logo h3 { display: none; }
+}
+@media only screen and (max-width : 480px) {
+    .top-nav {
+        color: white;
+        position: relative;
+    }
+    .top-nav-wrapp_logo { opacity: 1; }
+    .top-nav-wrapp_search { display: none }
+    .columns ul li {
+        background-color: #dcdcdc;
+    }
+    .modal-form {
+        background-color: #dcdcdc;
+    }
+    .modal-card {
+        width: 100%;
+        height: 90%;
+        font-size: 14px;
+    } 
+}

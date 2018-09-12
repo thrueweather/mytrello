@@ -1,0 +1,98 @@
+.top-nav {
+    background-color: #00000047;
+    color: white;
+    position: relative;
+}
+.top-nav-wrapp {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo-board { 
+    display: block;
+}
+.top-nav-wrapp_logo {
+    transition: .2s;
+    cursor: pointer;
+    opacity: 0.50;
+}
+.top-nav-wrapp_logo a {text-decoration: none; color: white;}
+.top-nav-wrapp_logo:hover {opacity: 1;}
+.top-nav-wrapp_logo h3 {
+    margin: 0;}
+.top-nav-wrapp_logo img, .top-nav-wrapp_boards img {
+    width: 60px;
+    height: 60px;
+}
+.top-nav-wrapp_boards {
+    display: flex;
+    align-items: center;
+    cursor: pointer; 
+}
+.top-nav-wrapp_icons {
+    display: flex;
+    align-items: center;
+}
+.top-nav-wrapp_search {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    transition: .2s;
+    margin: 0 4px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.top-nav-wrapp_search:hover {
+    background-color: #00000050;
+}
+.top-nav-wrapp_search form {
+    display: flex;
+    align-items: center;
+}
+.top-nav-wrapp_search form input {
+    background: none;
+    border: none;
+    outline: none;
+    color: white;
+}
+.top-nav-wrapp_icon {
+    display: flex;
+    align-items: center;
+    background-color: #00000010;
+    padding: 10px;
+    transition: .2s;
+    margin: 0 4px;
+    font-size: 25px;
+    cursor: pointer;
+}
+.top-nav-wrapp_icon p {margin: 0;}
+.top-nav-wrapp_icon:hover {
+    background-color: #00000050;
+}
+.sidebar {
+    background-color: #00000047;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    color: black;
+    padding: 20px;
+}
+.sidebar-wrapp ul {margin: 0;padding: 0;}
+.sidebar-wrapp ul li {
+    width: 50px;
+    height: 50px;
+    display: block;
+    cursor: pointer;
+}
+@media only screen and (max-width : 991px) {
+    .top-nav-wrapp_boards form { display: none; }
+    .top-nav-wrapp_icons, .top-nav-wrapp_icon {margin: 0 0 0 10px;}
+}
+@media only screen and (max-width : 768px) {
+    .top-nav-wrapp_boards { display: none; }
+}
+@media only screen and (max-width : 480px) {
+    .top-nav { padding: 5px 0; }
+    /* .top-nav-wrapp_logo h3 {margin: 0; font-size: 10px;} */
+    .top-nav-wrapp_icon { padding: 5px; }
+}
