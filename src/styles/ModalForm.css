@@ -12,18 +12,16 @@
     height: 100%;
 }
 .add-column-wrapp form {
-    background-color: #ffffffb8;
-    padding: 50px 50px;
     position: relative;
+    padding: 50px 50px;
     text-align: center;
+    background-color: #ffffffb8;
+    border-radius: 5px;
 }
 .add-column-wrapp form span {
     position: absolute;
-    top: 0; right: 0;
-    margin: 0;
-    font-size: 30px;
-    font-weight: 100;
-    transition: .2s;
+    top: 0; 
+    right: 0;
     cursor: pointer;
 }
 .add-column-wrapp form input {

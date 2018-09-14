@@ -36,7 +36,6 @@ class NavBar extends Component {
 
         const viewSidebar = this.props.backgroundSidebar && <DropDownSidebar/>
 
-
         return (
             <div className="top-nav">
                 <div className="container">
@@ -67,6 +66,7 @@ class NavBar extends Component {
                                 onClick={() => this.props.openForm()}>
                                 <Ionicon 
                                     icon="md-add" 
+                                    beat={this.props.columns.length ? false : true} 
                                     fontSize="1.10em" 
                                     color="white"
                                 />
@@ -74,11 +74,7 @@ class NavBar extends Component {
                             <div 
                                 className="top-nav-wrapp_icon"
                                 onClick={() => this.props.dropdownSidebar()}>
-                                <Ionicon 
-                                    icon="md-color-fill" 
-                                    fontSize="1.10em" 
-                                    color="white"
-                                />
+                                <Ionicon icon="md-color-fill" fontSize="1.10em" color="white"/>
                                 {viewSidebar}
                             </div>
                         </div>
@@ -93,7 +89,8 @@ const mapStateToProps = state => {
     return {
         backgrounds: state.interfaceReducer.switchBg,
         backgroundSidebar: state.interfaceReducer.dropdownSidebar,
-        getBackground: state.interfaceReducer.background
+        getBackground: state.interfaceReducer.background,
+        columns: state.columns.columns
     }
 }
 
