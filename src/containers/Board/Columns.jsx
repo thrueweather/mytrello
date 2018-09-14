@@ -25,6 +25,11 @@ const reorder = (list, startIndex, endIndex) => {
 
 const getListStyle = isDraggingOver => ({background: isDraggingOver ? '#00000055' : 'none'});
 
+const getItemStyle = (isDragging, draggableStyle, column) => ({
+    background: isDragging ? 'lightgreen' : `${column.background}`,
+    ...draggableStyle
+});
+
 class Columns extends Component {
     constructor(props) {
         super(props);
@@ -67,7 +72,11 @@ class Columns extends Component {
                                                         key={index}
                                                         ref={provided.innerRef} 
                                                         {...provided.draggableProps}
-                                                        style={{backgroundColor: `${column.background}`}}
+                                                        style={getItemStyle(
+                                                            snapshot.isDragging,
+                                                            provided.draggableProps.style,
+                                                            column
+                                                        )}
                                                     >
                                                         <div className="title-card" {...provided.dragHandleProps}>
                                                             <h2 
