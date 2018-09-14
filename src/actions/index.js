@@ -20,9 +20,10 @@ export const titleColumn = title => {
         payload: title
     }
 }
-export const createColumn = () => {
+export const createColumn = color => {
     return {
-        type: 'CREATE_COLUMN'
+        type: 'CREATE_COLUMN',
+        background: color
     }
 }
 export const deleteColumn = i => {

@@ -20,6 +20,7 @@ const columns = (state = initialState, action) => {
                         id: Date.now(),
                         title: state.newColumn,
                         date: new Date().toLocaleDateString(),
+                        background: action.background,
                         cards: [],
                         newCardForm: false,
                         newCard: ''

@@ -8,12 +8,17 @@ import { openForm, closeForm, titleColumn, createColumn } from '../actions';
 import '../styles/ModalForm.css'
 
 class Form extends Component {
+    state = { color: '' }
+
     handleChangeOnNewColumn = e => this.props.titleColumn(e.target.value)
 
+    handleClickOnGetColor = e => this.setState({ color: e.target.style.backgroundColor })
+
     handleClick = e => {
-        e.preventDefault()
-        this.props.createColumn(this.props.newColumn)
-        this.props.closeForm()
+        e.preventDefault();
+        this.props.createColumn(this.state.color);
+        this.setState({ color: '' });
+        this.props.closeForm();
     }
 
     render() {
@@ -21,20 +26,32 @@ class Form extends Component {
             return (
                 <div className="add-column">
                     <div className="add-column-wrapp">
-                        <form onSubmit={this.handleClick}>
-                            <span onClick={() => this.props.closeForm()}>
-                                <Ionicon icon="ios-close-circle-outline"/>
-                            </span>
-                            <input 
-                                type="text" 
-                                autoFocus
-                                maxLength="25"
-                                onChange={this.handleChangeOnNewColumn} 
-                                value={this.props.newcolumn} 
-                                placeholder="Add new column..."/> <br/>
-                            <button onClick={this.handleClick}>Add</button>
-                            
-                        </form>
+                        <div className="add-column-wrapp-container">
+                            <form onSubmit={this.handleClick}>
+                                <span onClick={() => this.props.closeForm()}>
+                                    <Ionicon icon="ios-close-circle-outline"/>
+                                </span>
+                                <input 
+                                    type="text" 
+                                    autoFocus
+                                    maxLength="25"
+                                    onChange={this.handleChangeOnNewColumn} 
+                                    value={this.props.newcolumn} 
+                                    placeholder="Add new column..."/> <br/>
+                                <button onClick={this.handleClick}>Add</button>
+                            </form>
+                            <div className="colors">
+                                <ul onClick={e => this.handleClickOnGetColor(e)}>
+                                    <li style={{backgroundColor: '#43c0f0c5'}}></li>
+                                    <li style={{backgroundColor: '#e6e624c5'}}></li>
+                                    <li style={{backgroundColor: '#e24040c5'}}></li>
+                                    <li style={{backgroundColor: '#11c311c5'}}></li>
+                                    <li style={{backgroundColor: '#d912d9c5'}}></li>
+                                    <li style={{backgroundColor: '#fcbc47c5'}}></li>
+                                    <li style={{backgroundColor: '#eeeeeec5'}}></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             )

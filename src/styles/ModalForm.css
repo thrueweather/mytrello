@@ -15,8 +15,6 @@
     position: relative;
     padding: 50px 50px;
     text-align: center;
-    background-color: #ffffffb8;
-    border-radius: 5px;
 }
 .add-column-wrapp form span {
     position: absolute;
@@ -39,4 +37,22 @@
     font-weight: 500;
     margin: 10px 0 0 0;
     padding: 10px 40px;
+}
+.add-column-wrapp .add-column-wrapp-container {
+    background-color: #ffffffb8;
+    border-radius: 5px;
+}
+.add-column-wrapp .add-column-wrapp-container .colors { padding: 0 15px; }
+.add-column-wrapp .add-column-wrapp-container .colors ul { padding: 0; }
+.add-column-wrapp .add-column-wrapp-container .colors ul li {
+    display: inline;
+    list-style: none;
+    margin: 0 5px;
+    padding: 0 10px;
+    border: 2px solid rgb(212, 210, 210);
+    border-radius: 100%;
+    cursor: pointer;
+}
+.add-column-wrapp .add-column-wrapp-container .colors ul li:active {
+    border: 2px solid rgb(68, 68, 255);
 }

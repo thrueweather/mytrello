@@ -11,13 +11,13 @@ const initialState = {
 const interfaceReducer = (state = initialState, action) => {
     switch (action.type) {
         case types.OPEN_MODAL_FORM:
-            return Object.assign({}, state, {modalForm: true});
+            return {...state, modalForm: true};
         case types.CLOSE_MODAL_FORM:
-            return Object.assign({}, state, {modalForm: false});
+            return {...state, modalForm: false};
         case types.DROP_DOWN_SIDEBAR:
-            return Object.assign({}, state, {dropdownSidebar: !state.dropdownSidebar});
+            return {...state, dropdownSidebar: !state.dropdownSidebar};
         case types.BACKGROUND:
-            return Object.assign({}, state, {background: action.payload})
+            return {...state, background: action.payload};
         default:
             return state;
     }
