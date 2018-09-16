@@ -5,35 +5,20 @@ import Ionicon from 'react-ionicons'
 
 import { 
     openForm, 
-    dropdownSidebar, 
-    chooseBackground, 
+    dropdownSidebar,  
     searchColumn 
-} from '../actions/index';
+} from '../../actions';
 
-import logo from '../images/logo.svg'
+import DropDownSidebar from './DropDownSidebar'
 
-import '../styles/NavBar.css'
+import logo from '../../images/logo.svg'
+
+import '../../styles/NavBar.css'
 
 class NavBar extends Component {
     render() {
         const flex = { display: 'flex', alignItems: 'center' }
-
-        const DropDownSidebar = () => (
-            <div className="sidebar">
-                <div className="sidebar-wrapp">
-                    <ul>
-                        {this.props.backgrounds.map((sw, index) => (
-                            <li 
-                                onClick={() => this.props.chooseBackground(sw.color)}
-                                key={index} 
-                                style={{background: `${sw.color}`}}>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            </div>
-        )
-
+        const add = <Ionicon icon="md-add" fontSize="1.10em" color="white"/>
         const viewSidebar = this.props.backgroundSidebar && <DropDownSidebar/>
 
         return (
@@ -56,7 +41,6 @@ class NavBar extends Component {
                                     <input 
                                         type="text" 
                                         onChange={e => this.props.searchColumn(e.target.value)} 
-                                        placeholder="Enter the name of the column"
                                     />
                                     <Ionicon icon="md-search" fontSize="1em" color="white"/>
                                 </form>
@@ -64,12 +48,7 @@ class NavBar extends Component {
                             <div 
                                 className="top-nav-wrapp_icon"
                                 onClick={() => this.props.openForm()}>
-                                <Ionicon 
-                                    icon="md-add" 
-                                    beat={this.props.columns.length ? false : true} 
-                                    fontSize="1.10em" 
-                                    color="white"
-                                />
+                                {add}
                             </div>
                             <div 
                                 className="top-nav-wrapp_icon"
@@ -87,7 +66,6 @@ class NavBar extends Component {
 
 const mapStateToProps = state => {
     return {
-        backgrounds: state.interfaceReducer.switchBg,
         backgroundSidebar: state.interfaceReducer.dropdownSidebar,
         getBackground: state.interfaceReducer.background,
         columns: state.columns.columns
@@ -98,7 +76,6 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({ 
         openForm, 
         dropdownSidebar,
-        chooseBackground,
         searchColumn
     }, dispatch)
 }

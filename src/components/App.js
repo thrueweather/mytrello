@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 
-import NavBar from '../containers/NavBar'
+import NavBar from '../containers/Navbar/NavBar'
 import Columns from '../containers/Board/Columns'
 import Form from '../containers/Form'
 

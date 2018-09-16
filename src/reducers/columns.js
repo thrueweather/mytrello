@@ -1,17 +1,7 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-    columns: [
-        {
-            id: Date.now(),
-            title: 'Testing',
-            date: new Date().toLocaleDateString(),
-            background: 'black',
-            cards: [],
-            newCardForm: false,
-            newCard: ''
-        }
-    ],
+    columns: [],
     search: '',
     newColumn: ''
 }
