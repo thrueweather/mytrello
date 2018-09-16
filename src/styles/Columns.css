@@ -60,6 +60,7 @@
     margin: 0;
 }
 .sc-bdVaJa {cursor: pointer;}
+.reverse {transform: rotate(90deg);}
 .columns ul li h3 {
     background-color: white;
     border-radius: 5px;

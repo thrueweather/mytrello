@@ -114,4 +114,10 @@ export const reorderArray = arr => {
         type: 'REORDER_COLUMNS',
         payload: arr
     }
-} 
+}
+export const sortCards = index => {
+    return {
+        type: 'SORT_CARDS',
+        columnIndex: index
+    }
+}

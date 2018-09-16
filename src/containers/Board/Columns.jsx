@@ -7,7 +7,8 @@ import Ionicon from 'react-ionicons'
 import { 
     openCloseColumnCard, newCard,
     createCard, deleteColumn,
-    editTitle, reorderArray
+    editTitle, reorderArray,
+    sortCards
 } from '../../actions'
 
 import ColumnCards from './ColumnCards'
@@ -86,8 +87,15 @@ class Columns extends Component {
                                                                 onBlur={e => this.props.editTitle(index, e.target.textContent)}>
                                                                 {column.title}
                                                             </h2>
-                                                            <span style={date}>{column.date}</span>
-                                                            <Ionicon onClick={() => this.props.deleteColumn(index)} icon="md-trash"/>
+                                                            <div>
+                                                                <span style={date}>{column.date}</span>
+                                                                <Ionicon 
+                                                                    className="reverse" 
+                                                                    onClick={() => this.props.sortCards(index)} 
+                                                                    icon="ios-swap"
+                                                                />
+                                                                <Ionicon onClick={() => this.props.deleteColumn(index)} icon="md-trash"/>
+                                                            </div>
                                                         </div>
                                                         <ColumnCards cards={column.cards} columnIndex={index} column={column}/>
                                                         <div className="form-card">
@@ -133,7 +141,8 @@ const mapDispatchToProps = dispatch => {
     return bindActionCreators({
         openCloseColumnCard, newCard,
         createCard, deleteColumn,
-        editTitle, reorderArray
+        editTitle, reorderArray,
+        sortCards
     }, dispatch)
 }
 

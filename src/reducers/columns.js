@@ -1,7 +1,17 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-    columns: [],
+    columns: [
+        {
+            id: Date.now(),
+            title: 'Testing',
+            date: new Date().toLocaleDateString(),
+            background: 'black',
+            cards: [],
+            newCardForm: false,
+            newCard: ''
+        }
+    ],
     search: '',
     newColumn: ''
 }
@@ -73,6 +83,18 @@ const columns = (state = initialState, action) => {
                                 }),
                                 newCard: ''}
                             : {...item}
+                        : {...item}
+                )
+            };
+        case types.SORT_CARDS:
+            let time = new Date().toLocaleTimeString();
+            let date = new Date().toLocaleDateString();
+            return {
+                ...state,
+                columns: [...state.columns].map(
+                    (item, index) => 
+                    index === action.columnIndex
+                        ? {...item, cards: [...item.cards.sort((s, d) => s.time < time || d.date < date)]}
                         : {...item}
                 )
             };
@@ -162,7 +184,7 @@ const columns = (state = initialState, action) => {
                 )
             };
         case types.REORDER_COLUMNS: 
-            return {...state, columns: action.payload}
+            return {...state, columns: action.payload};
         default:
             return state;
     }
